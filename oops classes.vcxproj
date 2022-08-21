@@ -127,8 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SLO-1\define-a-class.cpp" />
-    <ClCompile Include="SLO-1\io-Operations.cpp" />
+    <ClCompile Include="week1 lab excercise\q1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

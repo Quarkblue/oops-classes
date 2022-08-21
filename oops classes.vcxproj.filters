@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SLO-1\io-Operations.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SLO-1\define-a-class.cpp">
+    <ClCompile Include="week1 lab excercise\q1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
