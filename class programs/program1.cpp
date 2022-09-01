@@ -17,7 +17,7 @@ public:
 	~Student() {
 		delete& this->name;
 		delete& this->cgpa;
-		delete& this->numOfBacklogs
+		delete& this->numOfBacklogs;
 	}
 	
 	// NO backlogs
