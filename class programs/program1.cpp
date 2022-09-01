@@ -3,15 +3,21 @@
 using namespace std;
 
 class Student {
-public:
 	string name;
 	double cgpa;
 	int numOfBacklogs;
 
+public:
 	Student(string a, double b, int c) {
 		name = a;
 		cgpa = b;
 		numOfBacklogs = c;
+	}
+
+	~Student() {
+		delete& this->name;
+		delete& this->cgpa;
+		delete& this->numOfBacklogs
 	}
 	
 	// NO backlogs
