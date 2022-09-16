@@ -4,18 +4,29 @@ using namespace std;
 
 class Date {
 
-	string day;
-	int month, year;
-	
-	Date(string d, int m, int y) {
+ 
+	int month, year, day;
+	string str_month;
+public:
+	Date(int d, int m, int y) {
 		day = d;
 		month = m;
 		year = y;
 		
 	}
 	
+	void display() {
+		cout << day << "/" << month << "/" << year << endl;
+	}
+	
 	void changeformat() {
-		
+		switch (month)
+		{
+		case 1:
+			str_day = ""
+		default:
+			break;
+		}
 	}
 
 	
@@ -23,6 +34,10 @@ class Date {
 
 
 int main() {
+	
+	Date d1(2, 1, 2003);
+
+	d1.display();
 	
 	return 0;
 }
