@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="hackerrank-problems\dog-and-cats.cpp">
+    <ClCompile Include="week4 lab excercises\question.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
