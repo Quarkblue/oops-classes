@@ -9,8 +9,19 @@ class Date {
 	int month, year, day;
 	string str_month;
 	map<int, int> nOdays{
-		""
-	}
+		{1,31},
+		{2,28},
+		{3,31},
+		{4,30},
+		{5,31},
+		{6,30},
+		{7,31},
+		{8,31},
+		{9,30},
+		{10,31},
+		{11,30},
+		{12,31}
+	};
 public:
 	Date(int d, int m, int y) {
 		day = d;
@@ -71,8 +82,17 @@ public:
 	void dateAfterOneWeek() {
 		{
 			
-			if (month % 2 == 0) {
-				
+			if (nOdays.find(month)->second == 30) {
+				if (day + 7 > 30) {
+					day = day + 7 - 30;
+					month++;
+				}
+				else {
+					day = day + 7;
+				}
+			}
+			else if (nOdays.find(month)->second == 31) {
+				if
 			}
 			
 			/*day = day + 7;
