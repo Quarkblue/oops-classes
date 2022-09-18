@@ -92,19 +92,26 @@ public:
 				}
 			}
 			else if (nOdays.find(month)->second == 31) {
-				if
+				if (day + 7 > 30) {
+					day = day + 7 - 31;
+					month++;
+				}
+				else {
+					day = day + 7;
+				}
+			}
+			else if (nOdays.find(month)->second == 28) {
+				if (day + 7 > 28) {
+					day = day + 7 - 28;
+					month++;
+				}
+				else {
+					day = day + 7;
+				}
 			}
 			
-			/*day = day + 7;
-			if (day > 30) {
-				month = month + 1;
-				day = day - 30;
-			}
-			if (month > 12) {
-				year = year + 1;
-				month = month - 12;
-			}
-			cout << da*/y << "/" << month << "/" << year << endl;
+			changeformat();
+			
 		}
 	}
 
@@ -113,9 +120,11 @@ public:
 
 int main() {
 	
-	Date d1(2, 1, 2003);
+	Date d1(27, 1, 2003);
 
 	d1.display();
+	d1.changeformat();
+	d1.dateAfterOneWeek();
 	
 	return 0;
 }
