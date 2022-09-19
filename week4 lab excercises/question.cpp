@@ -1,4 +1,6 @@
 #include<iostream>
+#include<algorithm>
+#include<string>
 
 using namespace std;
 
@@ -12,7 +14,20 @@ public:
 		cin >> s;
 	}
 	
-	string print_Str() {
+	void print_Str() {
+		for_each(s.begin(), s.end(), [](char &c)
+			{
+				c = ::toupper(c);
+			});
+		
+		cout << "The string in upper case: " << s << endl;
+
+		for_each(s.begin(), s.end(), [](char& c)
+			{
+				c = ::tolower(c);
+			});
+		
+		cout << "The string in lower case: " << s << endl;
 		
 	}
 
@@ -20,6 +35,10 @@ public:
 
 int main() {
 
+	Str s1;
+	
+	s1.get_Str();
+	s1.print_Str();
 
 	return 0;
 }
