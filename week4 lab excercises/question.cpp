@@ -2,33 +2,24 @@
 
 using namespace std;
 
-class Circle {
-	int radius;
-
+class Str {
+	
+	string s;
+	
 public:
-	Circle(int r){
-		radius = r;
-	}
-
-	int calcPerimeter() {
-		int perimeter = 2 * 3.14 * radius;
-		
-		return perimeter;
-	}
-	int calcArea() {
-		int area = 3.14 * radius * radius;
-
-		return area;
+	void get_Str() {
+		cout << "Input the string: ";
+		cin >> s;
 	}
 	
+	string print_Str() {
+		
+	}
+
 };
 
 int main() {
 
-	Circle c1(5);
-	
-	cout << "The perimeter of the circle is: " << c1.calcPerimeter() << endl;
-	cout << "The area of the circle is: " << c1.calcArea() << endl;
-	
+
 	return 0;
 }
