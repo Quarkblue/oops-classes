@@ -2,39 +2,25 @@
 
 using namespace std;
 
-class Triangle {
-
-	private:
-		int side1, side2, side3;
-	public:
-		Triangle()
-		{
-			side1 = 3;
-			side2 = 4;
-			side3 = 5;
-		}
-
-		int perimeter() {
-			return side1 + side2 + side3;
-		}
-		
-		int area()
-		{
-			
-			int s = (side1 + side2 + side3) / 2;
-			
-			int area = sqrt(s * (s - side1) * (s - side2) * (s - side3));
-			
-			return area;
-		}
+class Average {
+public:
+	static float calcAverage(int a, int b, int c)
+	{
+			float average = (a + b + c) / 3;
+			return average;
+	}
+	
 };
 
 int main() {
 
-	Triangle t1;
+	int x, y, z;
 	
-	cout << "Perimeter of the triangle: " << t1.perimeter() << endl;
-	cout << "Area of the triangle: " << t1.area() << endl;
-
+	cout << "Enter three numbers: ";
+	
+	cin >> x >> y >> z;
+	
+	cout << "Average of the numbers: " << Average::calcAverage(x, y, z) << endl;
+	
 	return 0;
 }
