@@ -1,44 +1,40 @@
 #include<iostream>
-#include<algorithm>
-#include<string>
 
 using namespace std;
 
-class Str {
-	
-	string s;
-	
-public:
-	void get_Str() {
-		cout << "Input the string: ";
-		cin >> s;
-	}
-	
-	void print_Str() {
-		for_each(s.begin(), s.end(), [](char &c)
-			{
-				c = ::toupper(c);
-			});
-		
-		cout << "The string in upper case: " << s << endl;
+class Triangle {
 
-		for_each(s.begin(), s.end(), [](char& c)
-			{
-				c = ::tolower(c);
-			});
-		
-		cout << "The string in lower case: " << s << endl;
-		
-	}
+	private:
+		int side1, side2, side3;
+	public:
+		Triangle()
+		{
+			side1 = 3;
+			side2 = 4;
+			side3 = 5;
+		}
 
+		int perimeter() {
+			return side1 + side2 + side3;
+		}
+		
+		int area()
+		{
+			
+			int s = (side1 + side2 + side3) / 2;
+			
+			int area = sqrt(s * (s - side1) * (s - side2) * (s - side3));
+			
+			return area;
+		}
 };
 
 int main() {
 
-	Str s1;
+	Triangle t1;
 	
-	s1.get_Str();
-	s1.print_Str();
+	cout << "Perimeter of the triangle: " << t1.perimeter() << endl;
+	cout << "Area of the triangle: " << t1.area() << endl;
 
 	return 0;
 }
