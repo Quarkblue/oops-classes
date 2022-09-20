@@ -1,38 +1,25 @@
 #include<iostream>
-using namespace std;
-class pyramid
+using namespace  std;
+class number
 {
-private:
-	int r, T4Tutorials, SHOW, n, no;
 public:
-	pyramid()  //constructor
+	number(int i, int T4Tutorials_Sum)
 	{
-		no = 5;
-		n = no;
-	}
-	void sol()
-	{
-		for (r = 1; r <= no; r++)
-		{
-			for (T4Tutorials = 1; T4Tutorials <= n; T4Tutorials++)
+		cout << "numbers that are divisible by 9 between 100 and 200\n";
+		for (i = 101; i < 200; i++)
+			if (i % 9 == 0)
 			{
-				cout << " ";
+				cout << "numbers divisble by 9 is= " << i << endl;
+				T4Tutorials_Sum = T4Tutorials_Sum + i;
 			}
-			n--;
-			for (SHOW = 1; SHOW <= r; SHOW++)
-			{
-				cout << " " << r;
-			}
-			cout << endl;
-		}
+		cout << "T4Tutorials_Sum of all numbers divisible by 9 is= " << T4Tutorials_Sum << endl;
 	}
-	~pyramid()  //destructor
+	~number()
 	{
-		cout << endl << "object destroyed";
+		cout << "\n destructor completed its work to free up memory" << endl;
 	}
 };
 int main()
 {
-	pyramid ob;
-	ob.sol();
+	number f(101, 0);
 }
