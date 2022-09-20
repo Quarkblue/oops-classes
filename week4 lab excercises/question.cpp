@@ -1,18 +1,46 @@
-#include <iostream>  
+#include<iostream>
 using namespace std;
+class T4Tutorials_Floyds_Triangle
+{
+public:
+	int i, j, p, q, n;
+public:
+	//constructor
+	T4Tutorials_Floyds_Triangle() {
+		cout << "Please enter the no of rows";
+		cin >> n;
+		for (i = 1; i <= n; i++)
+		{
+			if (i % 2 == 0)
+			{
+				p = 1;
+				q = 0;
+			}
+			else
+			{
+				p = 0;
+				q = 1;
+			}
+			for (j = 1; j <= i; j++)
+			{
+				if (j % 2 == 0)
+				{
+					cout << p;
+				}
+				else
+				{
+					cout << q;
+				}
+			}
+			cout << endl;
+		}
+	}
+	~T4Tutorials_Floyds_Triangle()       // destructor
+	{
+	}
+};
 int main()
 {
-	int a[10], n, i;
-	cout << "Enter the number to convert: ";
-	cin >> n;
-	for (i = 0; n > 0; i++)
-	{
-		a[i] = n % 2;
-		n = n / 2;
-	}
-	cout << "Binary of the given number= ";
-	for (i = i - 1; i >= 0; i--)
-	{
-		cout << a[i];
-	}
+	T4Tutorials_Floyds_Triangle object;
+	return 0;
 }
