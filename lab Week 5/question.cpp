@@ -1,23 +1,20 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int sum(int x, int y)
+class Area
 {
-	return x + y;
-}
-double sum(double x, double y)
-{
-	return x + y;
-}
-int sum(int x, int y, int z)
-{
-	return x + y + z;
-}
+public:
+	void output(int l, int b)
+	{
+		cout << "Area of Rectangle is : " << l * b << endl;
+	}
+	void output(int a)
+	{
+		cout << "Area of Square is : " << a * a << endl;
+	}
+};
 int main()
 {
-	int a, b;
-	cout << "Enter the Two numbers:";
-	cin >> a >> b;
-	cout << "The Sum of two integers: " << sum(a, b) << endl;
-	cout << "The Sum of two floats: " << sum(11.5, 23.6) << endl;
-	cout << "The Sum of three integers: " << sum(15, 42, 33) << endl;
-}
+	Area obj;
+	obj.output(5, 6);
+	obj.output(12);
+}
