@@ -1,64 +1,34 @@
-#include <cstring>
 #include <iostream>
-#include <string.h>
 using namespace std;
-class CompareString {
+class complex {
 public:
-	char str[25];
-	CompareString(char str1[])
-	{
-		strcpy(this->str, str1);
+	int real;
+	int imag;
+	complex() {
+		int real = 0;
+		int imag = 0;
 	}
-	int operator==(CompareString s2)
-	{
-		if (strcmp(str, s2.str) == 0)
-			return 1;
-		else
-			return 0;
+	complex(int a, int b) {
+		real = a;
+		imag = b;
 	}
-	int operator<=(CompareString s3)
-	{
-		if (strlen(str) <= strlen(s3.str))
-			return 1;
-		else
-			return 0;
+	int display() {
+		cout << real << "+";
+		cout << imag << "i";
+		return 1;
 	}
-	int operator>=(CompareString s3)
-	{
-		if (strlen(str) >= strlen(s3.str))
-			return 1;
-		else
-			return 0;
+	complex operator+(complex c2) {
+		complex c3;
+		c3.real = real + c2.real;
+		c3.imag = imag + c2.imag;
+		return c3;
 	}
 };
-void compare(CompareString s1, CompareString s2)
-{
-	if (s1 == s2)
-		cout << s1.str << " is equal to "
-		<< s2.str << endl;
-	else {
-		cout << s1.str << " is not equal to "
-			<< s2.str << endl;
-		if (s1 >= s2)
-			cout << s1.str << " is greater than "
-			<< s2.str << endl;
-		else
-			cout << s2.str << " is greater than "
-			<< s1.str << endl;
-	}
-}
-void testcase1()
-{
-	char str1[] = "HELLO";
-	char str2[] = "BYE";
-	CompareString s1(str1);
-	CompareString s2(str2);
-	cout << "Comparing \"" << s1.str << "\" and \""
-		<< s2.str << "\"" << endl;
-	compare(s1, s2);
-}
-int main()
-{
-	testcase1();
+int main() {
+	complex x(10, 10);
+	complex y(70, 20);
+	complex z;
+	z = x + y;
+	z.display();
 	return 0;
-}
+}
