@@ -1,27 +1,32 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-class change {
-	void swap(int& a, int& b) {
-		int temp;
-		temp = a;
-		a = b;
-		b = temp;
+class Num {
+	int a;
+public:
+	Num() {
 	}
-	void swap(float& a, float& b) {
-		float temp;
-		temp = a;
-		a = b;
-		b = temp;
+	void getvalue() {
+		cout << "Enter the Number: ";
+		cin >> a;
+	}
+	void operator++() {
+		a = ++a;
+	}
+	void operator--() {
+		a = --a;
+	}
+	int print() {
+		return a;
 	}
 };
 int main() {
-	int a, b;
-	float c, d;
-	cin >> a >> b;
-	cin >> c >> d;
-	swap(a, b);
-	swap(c, d);
-	cout << a << " " << b << endl;
-	cout << c << " " << d;
+
+	Num obj;
+	obj.getvalue();
+	++obj;
+	cout << "Incremented Number: " << obj.print() << endl;
+
+	--obj; --obj;
+	cout << "Decremented Number: " << obj.print() << endl;
 	return 0;
 }
