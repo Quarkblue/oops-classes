@@ -1,36 +1,32 @@
 #include<iostream>
-#include<string.h>
 using namespace std;
-class func
-{
-public:
-	void pal(char c[]);
-};
-void func::pal(char c[])
-{
-	int l = strlen(c);
-	char b[10];
-	int i, j;
-	for (i = 0, j = l - 1; i < l; i++, j--)
-	{
-		b[i] = c[j];
-	}
-	b[i] = ' ';
-	if (strcmp(c, b) == 0)
-	{
-		cout << "\nThe entered text is palindrome";
-	}
-	else
-	{
-		cout << "\n the entered text is not a palindrome";
-	}
-}
+float vol(int, int);
+float vol(float);
+int vol(int);
 int main()
 {
-	char c[10];
-	func p;
-	cout << "\nEnter the string to be checked" << endl;
-	cin >> c;
-	p.pal(c);
+	int r, h, a;
+	float r1;
+	cout << "Enter radius and height of a cylinder:";
+	cin >> r >> h;
+	cout << "Enter side of cube:";
+	cin >> a;
+	cout << "Enter radius of sphere: ";
+	cin >> r1;
+	cout << "Volume of cylinder is " << vol(r, h);
+	cout << "\nVolume of cube is " << vol(a);
+	cout << "\nVolume of sphere is " << vol(r1);
 	return 0;
+}
+float vol(int r, int h)
+{
+	return(3.14 * r * r * h);
+}
+float vol(float r1)
+{
+	return((4 * 3.14 * r1 * r1 * r1) / 3);
+}
+int vol(int a)
+{
+	return(a * a * a);
 }
