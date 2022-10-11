@@ -1,64 +1,36 @@
-#include <cstring>
-#include <iostream>
-#include <string.h>
+#include<iostream>
+#include<string.h>
 using namespace std;
-class CompareString {
+class func
+{
 public:
-	char str[25];
-	CompareString(char str1[])
-	{
-		strcpy_s(this->str, str1);
-	}
-	int operator==(CompareString s2)
-	{
-		if (strcmp(str, s2.str) == 0)
-			return 1;
-		else
-			return 0;
-	}
-	int operator<=(CompareString s3)
-	{
-		if (strlen(str) <= strlen(s3.str))
-			return 1;
-		else
-			return 0;
-	}
-	int operator>=(CompareString s3)
-	{
-		if (strlen(str) >= strlen(s3.str))
-			return 1;
-		else
-			return 0;
-	}
+	void pal(char c[]);
 };
-void compare(CompareString s1, CompareString s2)
+void func::pal(char c[])
 {
-	if (s1 == s2)
-		cout << s1.str << " is equal to "
-		<< s2.str << endl;
-	else {
-		cout << s1.str << " is not equal to "
-			<< s2.str << endl;
-		if (s1 >= s2)
-			cout << s1.str << " is greater than "
-			<< s2.str << endl;
-		else
-			cout << s2.str << " is greater than "
-			<< s1.str << endl;
+	int l = strlen(c);
+	char b[10];
+	int i, j;
+	for (i = 0, j = l - 1; i < l; i++, j--)
+	{
+		b[i] = c[j];
 	}
-}
-void testcase1()
-{
-	char str1[] = "Animals";
-	char str2[] = "Animal";
-	CompareString s1(str1);
-	CompareString s2(str2);
-	cout << "Comparing \"" << s1.str << "\" and \""
-		<< s2.str << "\"" << endl;
-	compare(s1, s2);
+	b[i] = ' ';
+	if (strcmp(c, b) == 0)
+	{
+		cout << "\nThe entered text is palindrome";
+	}
+	else
+	{
+		cout << "\n the entered text is not a palindrome";
+	}
 }
 int main()
 {
-	testcase1();
+	char c[10];
+	func p;
+	cout << "\nEnter the string to be checked" << endl;
+	cin >> c;
+	p.pal(c);
 	return 0;
 }
