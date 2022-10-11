@@ -1,33 +1,23 @@
-#include <iostream>
-#include <string>
-# include <vector>
-class student
+#include<iostream>
+using namespace std;
+int sum(int x, int y)
 {
-public:
-	std::string ss;
-	std::string name;
-	student(std::string ss)
-	{
-		name = ss;
-	}
-	student()
-	{
-		name = "unknown";
-	}
-};
-class prasad
+	return x + y;
+}
+double sum(double x, double y)
 {
-public:
-	static void main(std::vector<std::string>& args)
-	{
-		student* obj = new student();
-		obj->ss = "abc";
-		std::cout << obj->ss << std::endl;
-		std::cout << obj->name << std::endl;
-	}
-};
-int main(int argc, char** argv) {
-	std::vector<std::string> parameter(argv + 1, argv + argc);
-	prasad::main(parameter);
-	return 0;
+	return x + y;
+}
+int sum(int x, int y, int z)
+{
+	return x + y + z;
+}
+int main()
+{
+	int a, b;
+	cout << "Enter the Two numbers:";
+	cin >> a >> b;
+	cout << "The Sum of two integers: " << sum(a, b) << endl;
+	cout << "The Sum of two floats: " << sum(11.5, 23.6) << endl;
+	cout << "The Sum of three integers: " << sum(15, 42, 33) << endl;
 }
