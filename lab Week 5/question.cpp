@@ -1,29 +1,28 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class AddAmount
-{
-private:
-	int amount = 50;
+class degree {
 public:
-	int x;
-	AddAmount()
+	degree()
 	{
-		amount + x;
+		cout << "I got a degree." << endl;
 	}
-	AddAmount(int a)
+};
+class undergraduate :public degree {
+public:
+	undergraduate()
 	{
-		amount = a + amount;
+		cout << "I am an Undergraduate" << endl;
 	}
-	void displayAmount()
+};
+class postgraduate :public degree {
+public:
+	postgraduate()
 	{
-		cout << "\n" << amount;
+		cout << "I am a Postgraduate";
 	}
 };
 int main()
 {
-	AddAmount a;
-	AddAmount b(40);
-	a.displayAmount();
-	b.displayAmount();
-	return 0;
+	undergraduate u;
+	postgraduate p;
 }
