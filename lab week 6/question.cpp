@@ -1,32 +1,18 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class Num {
-	int a;
+class shape {
 public:
-	Num() {
+	int area() {};
+	int cal_area(int length, int breadth) {
+		return length * breadth;
 	}
-	void getvalue() {
-		cout << "Enter the Number: ";
-		cin >> a;
-	}
-	void operator++() {
-		a = ++a;
-	}
-	void operator--() {
-		a = --a;
-	}
-	int print() {
-		return a;
+	int cal_area(int side) {
+		return side * side;
 	}
 };
 int main() {
-
-	Num obj;
-	obj.getvalue();
-	++obj;
-	cout << "Incremented Number: " << obj.print() << endl;
-
-	--obj; --obj;
-	cout << "Decremented Number: " << obj.print() << endl;
+	shape fo{};
+	cout << fo.cal_area(3, 4) << endl;
+	cout << fo.cal_area(5);
 	return 0;
 }
