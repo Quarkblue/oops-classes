@@ -1,54 +1,64 @@
-#include<iostream>
+#include <cstring>
+#include <iostream>
+#include <string.h>
 using namespace std;
-void swap(int& ix, int& iy);
-void swap(float& fx, float& fy);
-void swap(char& cx, char& cy);
+class CompareString {
+public:
+	char str[25];
+	CompareString(char str1[])
+	{
+		strcpy_s(this->str, str1);
+	}
+	int operator==(CompareString s2)
+	{
+		if (strcmp(str, s2.str) == 0)
+			return 1;
+		else
+			return 0;
+	}
+	int operator<=(CompareString s3)
+	{
+		if (strlen(str) <= strlen(s3.str))
+			return 1;
+		else
+			return 0;
+	}
+	int operator>=(CompareString s3)
+	{
+		if (strlen(str) >= strlen(s3.str))
+			return 1;
+		else
+			return 0;
+	}
+};
+void compare(CompareString s1, CompareString s2)
+{
+	if (s1 == s2)
+		cout << s1.str << " is equal to "
+		<< s2.str << endl;
+	else {
+		cout << s1.str << " is not equal to "
+			<< s2.str << endl;
+		if (s1 >= s2)
+			cout << s1.str << " is greater than "
+			<< s2.str << endl;
+		else
+			cout << s2.str << " is greater than "
+			<< s1.str << endl;
+	}
+}
+void testcase1()
+{
+	char str1[] = "Animals";
+	char str2[] = "Animal";
+	CompareString s1(str1);
+	CompareString s2(str2);
+	cout << "Comparing \"" << s1.str << "\" and \""
+		<< s2.str << "\"" << endl;
+	compare(s1, s2);
+}
 int main()
 {
-	int ix, iy;
-	float fx, fy;
-	char cx, cy;
-	cout << "Enter 2 integers:";
-	cin >> ix >> iy;
-	cout << "Enter 2 floating point no:s:";
-	cin >> fx >> fy;
-	cout << "Enter 2 characters:";
-	cin >> cx >> cy;
-	cout << "\nIntegers:";
-	cout << "\nix=" << ix << "\niy=" << iy;
-	swap(ix, iy);
-	cout << "\nAfter swapping";
-	cout << "\nix=" << ix << "\niy=" << iy;
-	cout << "\nFloating point no:s";
-	cout << "\nfx=" << fx << "\nfy=" << fy;
-	swap(fx, fy);
-	cout << "\nAfter swapping";
-	cout << "\nfx=" << fx << "\nfy=" << fy;
-	cout << "\nCharacters";
-	cout << "\ncx=" << cx << "\ncy=" << cy;
-	swap(cx, cy);
-	cout << "\nAfter swapping";
-	cout << "\ncx=" << cx << "\ncy=" << cy;
+	testcase1();
 	return 0;
-}
-void swap(int& a, int& b)
-{
-	int temp;
-	temp = a;
-	a = b;
-	b = temp;
-}
-void swap(float& a, float& b)
-{
-	float temp;
-	temp = a;
-	a = b;
-	b = temp;
-}
-void swap(char& a, char& b)
-{
-	char temp;
-	temp = a;
-	a = b;
-	b = temp;
 }
