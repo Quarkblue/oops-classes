@@ -1,34 +1,27 @@
 #include <iostream>
 using namespace std;
-class complex {
-public:
-	int real;
-	int imag;
-	complex() {
-		int real = 0;
-		int imag = 0;
+class change {
+	void swap(int& a, int& b) {
+		int temp;
+		temp = a;
+		a = b;
+		b = temp;
 	}
-	complex(int a, int b) {
-		real = a;
-		imag = b;
-	}
-	int display() {
-		cout << real << "+";
-		cout << imag << "i";
-		return 1;
-	}
-	complex operator+(complex c2) {
-		complex c3;
-		c3.real = real + c2.real;
-		c3.imag = imag + c2.imag;
-		return c3;
+	void swap(float& a, float& b) {
+		float temp;
+		temp = a;
+		a = b;
+		b = temp;
 	}
 };
 int main() {
-	complex x(10, 10);
-	complex y(70, 20);
-	complex z;
-	z = x + y;
-	z.display();
+	int a, b;
+	float c, d;
+	cin >> a >> b;
+	cin >> c >> d;
+	swap(a, b);
+	swap(c, d);
+	cout << a << " " << b << endl;
+	cout << c << " " << d;
 	return 0;
 }
